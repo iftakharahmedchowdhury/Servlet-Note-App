@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +16,12 @@
             <div class="card">
                 <div class="card-body">
                     <h2 class="text-center">Register</h2>
+                    <c:if test="${not empty param.errorMessage}">
+                        <div class="alert alert-danger">
+                                ${param.errorMessage}
+                        </div>
+                    </c:if>
+
                     <form action="register" method="post">
                         <div class="form-group">
                             <label for="username">Username</label>

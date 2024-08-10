@@ -29,7 +29,7 @@ public class RegisterServlet extends HttpServlet {
                 resp.sendRedirect("login.jsp?message=Registration successful");
             }
         } catch (SQLException e) {
-            throw new ServletException(e);
+            resp.sendRedirect("register.jsp?errorMessage=Registration failed. Duplicate username found.");
         }
     }
 }
