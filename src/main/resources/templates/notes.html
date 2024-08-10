@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Notes</title>
+</head>
+<body>
+<h2>Notes</h2>
+<ul>
+    <li th:each="note : ${notes}" th:text="${note}"></li>
+</ul>
+<form action="/addNote" method="post">
+    <textarea name="note" required></textarea>
+    <button type="submit">Add Note</button>
+</form>
+</body>
+</html>
